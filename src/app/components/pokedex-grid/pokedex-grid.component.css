@@ -1,0 +1,138 @@
+.GridWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ButtonRow {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.Text {
+  position: relative;
+  left: 5%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.Buttons {
+  position: relative;
+  right: 5%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrowRight,
+.arrowLeft {
+  display: flex;
+  background-color: #EA686D;
+  padding: 0.5rem;
+  box-shadow: 0px 15px 15px rgba(234, 104, 109, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.PokemonGrid {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr) repeat(2, 0);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-transform: capitalize;
+}
+
+.PokemonWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  border-radius: 2px;
+}
+
+.PokemonCard {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  -webkit-box-shadow: 10px 10px 20px 9px rgba(181, 181, 181, 1);
+  -moz-box-shadow: 10px 10px 20px 9px rgba(181, 181, 181, 1);
+  box-shadow: 10px 10px 20px 9px rgba(181, 181, 181, 1);
+}
+
+.TitleRow,
+.HeightRow,
+.WeightRow {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TitleRow>span:nth-child(1) {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.TitleRow>span:nth-child(2) {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.Image>img {
+  margin: 0 auto 0 auto;
+  cursor: pointer;
+  object-fit: fill;
+  min-height: 250px;
+}
+
+.HeightRow,
+.WeightRow {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.HeightRow>span:nth-child(2),
+.WeightRow>span:nth-child(2) {
+  font-weight: 600;
+}
+
+.Tipos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.Tipos>span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2% 25%;
+  border-radius: 2px;
+  margin-right: 5px;
+}

@@ -1,0 +1,30 @@
+<div class="Wrapper">
+  <div class="BannerText">
+    <div class="TextWrapper">
+      <div class="LogoWrapper">
+        <img src="../../../assets/Logo.svg" width="110" height="130">
+      </div>
+      <div class="MainText">
+        <span>Explore o mundo <br>
+        dos <span> Pokémons </span> </span>
+      </div>
+      <div class="SubText">
+        <span>Descubra todas as espécies de Pokémons</span>
+      </div>
+      <div class="SearchBar">
+        <input #input class="SearchBarBox" type="text" 
+        placeholder=" Digite o nome ou código do Pókemon aqui">
+        <div class="SearchBarButton">
+          <button (click)="onDetail(input.value)">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="BannerImages">
+    <div class="ImagesWrapper">
+      <div class="Banner1"></div>
+      <div class="Banner2"></div>
+      <div class="Banner3"></div>
+    </div>
+  </div>
+</div>

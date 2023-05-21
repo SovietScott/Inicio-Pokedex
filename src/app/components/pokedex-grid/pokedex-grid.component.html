@@ -1,0 +1,42 @@
+<div class="GridWrapper">
+  <div class="ButtonRow">
+    <div class="Text">
+      <span>Pokedéx</span>
+    </div>
+    <div class="Buttons">
+      <div class="arrowLeft" (click)="onRefresh('left')" *ngIf="pokemonList.anterior">
+        <img src="../../../assets/arrow_left.svg">
+      </div>
+      <div class="arrowRight" (click)="onRefresh('right')" *ngIf="pokemonList.proximo">
+        <img src="../../../assets/arrow_right.svg">
+      </div>
+    </div>
+  </div>
+  <div class="PokemonGrid">
+    <div class="PokemonWrapper" *ngFor="let pokemon of pokemonList.resultados">
+      <div class="PokemonCard">
+        <div class="TitleRow">
+          <span>{{pokemon.info.nome}}</span>
+          <span>#{{pokemon.info.codigo}}</span>
+        </div>
+        <div class="Image">
+          <img src={{pokemon.info.foto}} (click)="redirectToPokemon(pokemon.info.nome)" > 
+        </div>
+        <div class="HeightRow">
+          <span>Altura: </span>
+          <span>{{pokemon.info.altura}}</span>
+        </div>
+        <div class="WeightRow">
+          <span>Peso: </span>
+          <span>{{pokemon.info.peso}}</span> 
+        </div>
+        <div class="Tipos">
+          <span *ngFor="let tipo of pokemon.info.tipos"
+          [ngStyle]="{ 'background-color': 'var(--' + tipo + ')'}">
+            {{tipo}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

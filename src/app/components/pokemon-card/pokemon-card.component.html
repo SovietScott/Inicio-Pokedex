@@ -1,0 +1,103 @@
+<div class="Wrapper">
+  <div class="DataWrapper">
+    <div class="InfoContainer">
+      <div class="LogoWrapper">
+        <img src="../../../assets/Logo.svg" width="110" height="130">
+        <p>{{pokemonData.nome}}</p>
+      </div>
+      <div class="Data">
+        <div class="subtitle">
+          <div class="code">
+            <p>Cod: #{{pokemonData.codigo}}</p>
+          </div>
+          <div class="types">
+            <p>Tipos: </p><span *ngFor="let tipo of pokemonData.tipos"
+            [ngClass]="tipo" [ngStyle]="{ 'background-color': 'var(--' + tipo + ')'}"> 
+              {{tipo}} </span>
+          </div>
+        </div>
+        <div class="description-title">
+          <p>Descrição</p>
+        </div>
+        <div class="description-text">
+          <p>"{{pokemonData.descricao}}"</p>
+        </div>
+        <div class="information">
+          <p>Informações</p>
+          <div class="measures">
+            <div class="names">
+              <p>Altura:</p>
+              <p>Peso:</p>
+            </div>
+            <div class="weight">
+              <p>{{pokemonData.altura}}0cm</p>
+              <p>{{pokemonData.peso}}kg</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="StatsWrapper">
+            <div class="StatsNames">
+              <ul>
+                <li>Vida</li>
+                <li>Defesa</li>
+                <li>Velocidade</li>
+                <li>Ataque</li>
+              </ul>
+            </div>
+            <div class="StatsPercent" >
+              <div class="hp">
+                <div class="colored" [ngStyle]="{ 'width': pokemonData.vida | stat}">
+                  ;
+                </div>
+                <div class="white" [ngStyle]="{ 'width': pokemonData.vida | stat : 'max'}">
+                  ;
+                </div>
+              </div>
+              <div class="defense">
+                <div class="colored" [ngStyle]="{ 'width': pokemonData.defesa | stat}">
+                  ;
+                </div>
+                <div class="white" [ngStyle]="{ 'width': pokemonData.defesa | stat : 'max'}">
+                  ;
+                </div>
+              </div>
+              <div class="speed">
+                <div class="colored" [ngStyle]="{ 'width': pokemonData.velocidade | stat}">
+                  .
+                </div>
+                <div class="white" [ngStyle]="{ 'width': pokemonData.velocidade | stat : 'max'}">
+                  ;
+                </div>
+              </div>
+              <div class="attack">
+                <div class="colored" [ngStyle]="{ 'width': pokemonData.ataque | stat}">
+                  .
+                </div>
+                <div class="white" [ngStyle]="{ 'width': pokemonData.ataque | stat : 'max'}">
+                  ;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Photo">
+    <div class="Mural">
+      <img src={{pokemonData.foto}}>
+    </div>
+  </div>
+  <div class="arrowLeft" (click)="onArrow('left')">
+    <img src="../../../assets/arrow_left.svg">
+  </div>
+  <div class="arrowRight" (click)="onArrow('right')">
+    <img src="../../../assets/arrow_right.svg">
+  </div>
+  <div class="HomeButtonWrapper">
+    <button class="HomeButton" (click)="onHome()">
+      <span>Página inicial</span>
+    </button>
+  </div>
+</div>
