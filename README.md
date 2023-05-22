@@ -1,6 +1,8 @@
 # PokedexProject
 Projeto feito para o processo seletivo da Inicie Transformação Educacional para Front-End apenas com Angular, CSS puro e a PokeAPI.
 
+> Foi utilizado o design próprio fornecido pela Inicie para o projeto
+
 > ⚠️ É necessário possuir instalado ambos `NodeJs` e `Angular` para rodar o projeto
 
 Para rodá-lo é necessário realizar os seguintes passos:
@@ -11,3 +13,5 @@ Detalhes:
   * A porta padrão é `localhost:4200`
   * A url de detalhamento de cada Pokémon é `localhost:4200/{nome ou codigo do Pokemon}`
   * Ao clicar nos Pokémons no grid da tela inicial o usuário será redirecionado ao seu respectivo detalhamento
+
+* [Link para o site em produção](https://asimplepokedex.netlify.app/)
