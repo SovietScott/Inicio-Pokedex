@@ -102,7 +102,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  
   margin-top: 1rem;
 }
 
@@ -123,4 +122,43 @@
   background-repeat: no-repeat;
   border-radius: 10px;
   background-size: 100% 90%;
+}
+
+.BannerImagesLogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  position: relative;
+  left: calc(-51vw + 50%);
+}
+.BannerImagesLogo>.ImagesWrapper>div{
+  width: 100px;
+  height: 200px;
+  background-size: contain;
+}
+.BannerImagesLogo>.ImagesWrapper{
+  width: 100%;
+  justify-items: center;
+}
+
+@media screen and (max-width: 800px){
+  .SubText>span{
+    text-align: start;
+  }
+  .MainText>span{
+    font-size: 35px;
+  }
+
+  .BannerText{
+    width: 100%;
+  }
+
+  .SearchBar>input{
+    width: 70%;
+  }
+  .SearchBarButton{
+    width: 10%;
+  }
+  
 }

@@ -13,7 +13,12 @@
           <div class="types">
             <p>Tipos: </p><span *ngFor="let tipo of pokemonData.tipos"
             [ngClass]="tipo" [ngStyle]="{ 'background-color': 'var(--' + tipo + ')'}"> 
-              {{tipo}} </span>
+              {{tipo}}</span>
+          </div>
+          <div class="PhotoMobile" *ngIf="isMobile">
+            <div class="Mural">
+              <img src={{pokemonData.foto}}>
+            </div>
           </div>
         </div>
         <div class="description-title">
@@ -35,7 +40,6 @@
             </div>
           </div>
         </div>
-        <div>
           <div class="StatsWrapper">
             <div class="StatsNames">
               <ul>
@@ -80,11 +84,10 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
-  <div class="Photo">
+  <div class="Photo" *ngIf="!isMobile">
     <div class="Mural">
       <img src={{pokemonData.foto}}>
     </div>

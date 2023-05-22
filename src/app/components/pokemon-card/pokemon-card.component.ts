@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , HostListener} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonListService } from 'src/app/services/PokemonListService/pokemon-list.service';
 import { Pokemon } from '../../models/Pokemon';
-import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css']
 })
-export class PokemonCardComponent implements OnInit {
+export class PokemonCardComponent implements OnInit{
   protected pokemonName: string = '';
   protected pokemonData: Pokemon = {} as Pokemon;
   protected random = Math.floor(Math.random() * (50));
+  protected isMobile : boolean = this.detectMobile();
 
   constructor(private service: PokemonListService, private route: ActivatedRoute,
     private router: Router) {
@@ -43,6 +43,14 @@ export class PokemonCardComponent implements OnInit {
     )
   }
 
+  @HostListener('window:resize', ['$event']) onResize(event : any) {
+    this.isMobile = this.detectMobile(event.target.innerWidth, event.target.innerHeight);
+  }
+
+  detectMobile(width : number = window.innerWidth, height : number = window.innerHeight) {
+    return ( ( width <= 1000 ) && ( height <= 950 ) );
+  }
+
   onArrow(type: string): void | null {
     if (Number(this.pokemonData.codigo) != 1) {
       switch (type) {
@@ -60,12 +68,12 @@ export class PokemonCardComponent implements OnInit {
           break;
       }
     }
-    else{
+    else {
       return null
     }
   }
 
-  onHome() : void{
+  onHome(): void {
     this.router.navigate(([``])).then(() => {
       window.location.reload();
     });

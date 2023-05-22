@@ -119,7 +119,7 @@
 }
 
 .StatsNames {
-  width: 25%;
+  width: 35%;
 }
 
 .StatsNames>ul {
@@ -177,6 +177,15 @@
   justify-content: center;
   font-size: 18px;
   font-weight: 600;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.PhotoMobile{
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
   -webkit-animation-duration: 1s;
@@ -266,6 +275,50 @@
   display: inline-block;
   position: relative;
   transition: 0.5s;
+}
+
+@media screen and (max-width : 1000px){
+  .PhotoMobile{
+    display: flex;
+    width: 100%;
+  }
+  .PhotoMobile>.Mural{
+    width: 100%;
+    padding: 0;
+  }
+  .DataWrapper{
+    width: 90%;
+  }
+  .InfoContainer{
+    width: 90%;
+  }
+  .StatsWrapper{
+    width: 100%;
+  }
+  .subtitle{
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+  .types>span{
+    padding: 0 5px;
+  }
+  .types>p{
+    margin: 0 5px 0 0;
+  }
+  .HomeButton{
+    display: none;
+  }
+  .names>p{
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .StatsPercent{
+    width: 65%;
+  }
 }
 
 @keyframes fadeInDown {
