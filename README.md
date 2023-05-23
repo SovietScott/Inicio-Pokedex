@@ -13,5 +13,6 @@ Detalhes:
   * A porta padrão é `localhost:4200`
   * A url de detalhamento de cada Pokémon é `localhost:4200/{nome ou codigo do Pokemon}`
   * Ao clicar nos Pokémons no grid da tela inicial o usuário será redirecionado ao seu respectivo detalhamento
+  * A descrição no detalhamento dos pokémons é multilinguagem e aleatória (pois português não recebe suporte da API)
 
 * [Link para o site em produção](https://asimplepokedex.netlify.app/)

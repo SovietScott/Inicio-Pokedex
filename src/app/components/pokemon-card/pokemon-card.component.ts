@@ -34,6 +34,11 @@ export class PokemonCardComponent implements OnInit{
         tipos: data.types.map((type: any) => type.type.name),
         descricao: '',
         foto: data.sprites.front_default
+      }, (error) => {
+        alert("O pokémon não foi encontrado, por favor tente novamente :/"),
+        this.router.navigate(([``])).then(() => {
+          window.location.reload();
+        });
       }
     )
     this.service.getDescription(pokemonName.toLocaleLowerCase()).subscribe(

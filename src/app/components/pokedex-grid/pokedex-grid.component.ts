@@ -52,7 +52,7 @@ export class PokedexGridComponent implements OnInit {
       case "left":
         this.loadList(url[0])
         break;
-      case ('right'):
+      case "right":
         this.loadList(url[1])
         break;
     }
