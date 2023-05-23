@@ -22,6 +22,9 @@ export class PokemonBannerComponent {
   }
 
   onDetail(value : string){
+    if(value[0] === '#'){
+      value.substring(0)
+    }
     this.router.navigate(([`/${value}`])).then(() => {
       window.location.reload();
     });

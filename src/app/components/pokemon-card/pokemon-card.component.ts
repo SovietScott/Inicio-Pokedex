@@ -46,7 +46,7 @@ export class PokemonCardComponent implements OnInit{
   }
 
   onArrow(type: string): void | null {
-    if (Number(this.pokemonData.codigo) != 1) {
+    if (Number(this.pokemonData.codigo) != 0) {
       switch (type) {
         case ('left'):
           let code1 = String(Number(this.pokemonData.codigo) - 1);
@@ -61,8 +61,7 @@ export class PokemonCardComponent implements OnInit{
           });
           break;
       }
-    }
-    else {
+    }else {
       return null
     }
   }

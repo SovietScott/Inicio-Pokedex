@@ -25,7 +25,9 @@
           <p>Descrição</p>
         </div>
         <div class="description-text">
-          <p>"{{pokemonData.descricao}}"</p>
+          <p *ngIf="pokemonData.descricao">"{{pokemonData.descricao}}"</p>
+          <p *ngIf="!pokemonData.descricao">Descrição do pókemon não disponível, 
+            tente recarregar a página</p>
         </div>
         <div class="information">
           <p>Informações</p>
