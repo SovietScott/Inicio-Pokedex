@@ -21,20 +21,9 @@ export class PokemonCardComponent implements OnInit{
   onLoad(pokemonName: string = this.pokemonName, pokemonService: PokemonListService = this.service,
     route: ActivatedRoute = this.route): void {
     pokemonName = route.snapshot.params['name'];
-    this.service.listPokemon(pokemonName.toLocaleLowerCase()).subscribe(
-      (data: any) => this.pokemonData = <Pokemon>{
-        nome: data.name,
-        codigo: data.id,
-        altura: data.height * 2.54, // inches para cm
-        peso: data.weight / 10, // lbs para kg
-        vida: data.stats[0].base_stat,
-        defesa: data.stats[2].base_stat,
-        velocidade: data.stats[5].base_stat,
-        ataque: data.stats[1].base_stat,
-        tipos: data.types.map((type: any) => type.type.name),
-        descricao: '',
-        foto: data.sprites.front_default
-      }, (error) => {
+    this.service.getData(pokemonName).subscribe(
+      (data: any) => {this.pokemonData = data}, 
+      (error) => {
         alert("O pokémon não foi encontrado, por favor tente novamente :/"),
         this.router.navigate(([``])).then(() => {
           window.location.reload();

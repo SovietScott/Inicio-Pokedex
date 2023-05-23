@@ -46,13 +46,13 @@ export class PokemonListService {
   }
 
   getData(name : string) {
-    return this.listPokemon(name).pipe(
+    return this.listPokemon(name.toLocaleLowerCase()).pipe(
       map(
         (data: any) => <Pokemon>{
           nome: data.name,
           codigo: data.id,
-          altura: data.height * 2.54, // inches para cm
-          peso: data.weight / 10, // lbs para kg
+          altura: data.height * 10, // Decimetro para Centimetro
+          peso: data.weight / 10, // Hectograma para Kg
           vida: data.stats[0].base_stat,
           defesa: data.stats[2].base_stat,
           velocidade: data.stats[5].base_stat,
